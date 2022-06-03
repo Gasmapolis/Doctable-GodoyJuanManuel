@@ -40,8 +40,8 @@ header .logo {
   margin-left: 25%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 50%;
-  width: 50%;
+  height: 45%;
+  width: 45%;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-name: tada;
@@ -1718,10 +1718,10 @@ main section.juegoLudoteca div.juegoLudoteca2 iframe.videoLudoteca {
 }
 
 section.carrusel {
-  margin-top: 15%;
+  margin: 15%;
+  margin-top: 40px;
   margin-bottom: 50px;
-  width: 80%;
-  margin-left: 10%;
+  width: 70%;
   border: 15px solid blue;
   border-radius: 40px;
 }
