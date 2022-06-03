@@ -164,7 +164,7 @@ main {
             margin: 0 auto;
             padding: 0;
             width: 80%;
-            background-image: url(../images/fondo\ noticias.webp);
+            background-image: url(../images/fondoNoticias.webp);
             background-size: cover;
             background-repeat: no-repeat;
 
@@ -446,6 +446,7 @@ footer {
 
     i {
         font-size: 50px;
+        margin-left: 10px;
     }
 }
 
@@ -804,6 +805,7 @@ main.contacto{
         width: 90%;
         margin: 0 auto;
         margin-top: 30px;
+        margin-bottom: 50px;
         padding: 25px;
         border: 15px double rgb(11, 55, 58);
         label{

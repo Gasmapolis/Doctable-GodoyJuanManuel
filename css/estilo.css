@@ -2,7 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -12,9 +13,13 @@ body {
 }
 
 header {
-  box-sizing: border-box;
-  align-items: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   background-color: orange;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0616f8), color-stop(#07b2c9), to(black));
   background-image: linear-gradient(#0616f8, #07b2c9, black);
   border-top: 10px;
   border-right: 10px;
@@ -23,23 +28,40 @@ header {
   border-bottom: 0.1px hidden orange;
   border-style: ridge;
   margin-bottom: 15px;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-delay: 0s;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
+
 header .logo {
   margin-left: 25%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 50%;
   width: 50%;
-  animation-duration: 3s;
-  animation-name: tada;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: tada;
+          animation-name: tada;
 }
+
 header nav ul.navegador {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  align-items: baseline;
-  justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
   font-size: 16px;
@@ -48,6 +70,7 @@ header nav ul.navegador {
   margin-right: 15px;
   margin-left: auto;
 }
+
 header nav ul.navegador .navActivo {
   font-size: 36px;
   text-transform: uppercase;
@@ -58,24 +81,29 @@ header nav ul.navegador .navActivo {
   border-top-left-radius: 14px;
   margin-bottom: 0px;
 }
+
 header nav ul.navegador .navDerecha {
-  background-color: rgba(255, 102, 0, 0.3411764706);
-  border-bottom: 6px solid rgba(255, 102, 0, 0.3411764706);
+  background-color: #ff660057;
+  border-bottom: 6px solid #ff660057;
   border-left: 0px hidden;
   border-top-left-radius: 0px;
   padding: 0 4px 0 4px;
   margin-bottom: 0px;
-  box-shadow: 0px 0px 5px 5px black;
+  -webkit-box-shadow: 0px 0px 5px 5px black;
+          box-shadow: 0px 0px 5px 5px black;
 }
+
 header nav ul.navegador .navIzquierda {
-  background-color: rgba(255, 102, 0, 0.3411764706);
-  border-bottom: 2px solid rgba(255, 102, 0, 0.3411764706);
+  background-color: #ff660057;
+  border-bottom: 2px solid #ff660057;
   border-right: 0px hidden;
   border-top-right-radius: 0px;
   padding: 0 4px 0 4px;
   margin-bottom: 0px;
-  box-shadow: 0px 0px 5px 5px black;
+  -webkit-box-shadow: 0px 0px 5px 5px black;
+          box-shadow: 0px 0px 5px 5px black;
 }
+
 header nav ul.navegador li {
   display: inline-block;
   border: 5px groove blue;
@@ -85,10 +113,12 @@ header nav ul.navegador li {
   margin: right 0.001px;
   margin-bottom: 0px;
 }
+
 header nav ul.navegador a {
   color: black;
   text-decoration: none;
 }
+
 @media only screen and (max-width: 455px) {
   header nav ul.navegador {
     font-size: 10px;
@@ -111,40 +141,61 @@ header nav ul.navegador a {
 }
 
 main {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
 }
+
 main .inicioGaleria {
   border: 12px inset #0000ff;
   border-radius: 60px;
 }
+
 main section.inicioNoticias {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 50px 1fr;
-  grid-template-rows: 40px 200px 1fr;
+  -ms-grid-columns: 1fr 50px 1fr;
+      grid-template-columns: 1fr 50px 1fr;
+  -ms-grid-rows: 40px 200px 1fr;
+      grid-template-rows: 40px 200px 1fr;
   justify-items: center;
   margin: 0 auto;
   padding: 0;
   width: 80%;
-  background-image: url(../images/fondo\ noticias.webp);
+  background-image: url(../images/fondoNoticias.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 main h2.tituloNoticias {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-column: 1/4;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 35px;
   font-family: fantasy;
 }
+
 main h2.tituloNoticias a {
   text-decoration: none;
   color: green;
 }
+
 main div.fotoNoticias {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
+
 main .fotoNoticia {
   display: inline-block;
   height: 250px;
@@ -153,33 +204,59 @@ main .fotoNoticia {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
 main .fotoNoticia:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
   transition: 1s;
-  box-shadow: 5px 5px 5px 5px #000000;
+  -webkit-box-shadow: 5px 5px 5px 5px #000000;
+          box-shadow: 5px 5px 5px 5px #000000;
 }
+
 main .noticia1, main body.fondoNoticias section.noticias div.noticia2, body.fondoNoticias section.noticias main div.noticia2 {
-  grid-row: 2/4;
-  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
 }
+
 main .noticia2 {
-  grid-row: 2/4;
-  grid-column: 3/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
 }
+
 @media only screen and (max-width: 640px) {
   main section.inicioNoticias {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr 200px 1fr;
-    grid-template-rows: 40px 200px 220px;
+    -ms-grid-columns: 1fr 200px 1fr;
+        grid-template-columns: 1fr 200px 1fr;
+    -ms-grid-rows: 40px 200px 220px;
+        grid-template-rows: 40px 200px 220px;
   }
   main .noticia1, main body.fondoNoticias section.noticias div.noticia2, body.fondoNoticias section.noticias main div.noticia2 {
-    grid-row: 2/3;
-    grid-column: 2/3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     justify-self: flex-start;
   }
   main .noticia2 {
-    grid-row: 3/4;
-    grid-column: 2/3;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     justify-self: flex-start;
     margin-top: 10px;
   }
@@ -188,10 +265,14 @@ main .noticia2 {
     width: 200px;
   }
 }
+
 main section.inicioLudoteca {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px 1fr 1fr;
-  grid-template-rows: 80px 220px 220px;
+  -ms-grid-columns: 1fr 1fr 250px 1fr 1fr;
+      grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+  -ms-grid-rows: 80px 220px 220px;
+      grid-template-rows: 80px 220px 220px;
   width: 80%;
   margin: 0 auto;
   background-image: url(../images/Ludoteca_fondo.jpg);
@@ -200,25 +281,45 @@ main section.inicioLudoteca {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
 main section.inicioLudoteca h2.tituloLudoteca {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
-  grid-row: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
   text-align: center;
   font-size: 35px;
   font-family: fantasy;
   margin-bottom: 30px;
 }
+
 main section.inicioLudoteca .fotoJuego1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   margin-top: 5px;
 }
+
 main section.inicioLudoteca .fotojuego2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
 }
+
 main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-column: 2/6;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   display: inline-block;
   font-size: 16px;
@@ -234,10 +335,16 @@ main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
   background-color: aliceblue;
   opacity: 0.7;
 }
+
 main section.inicioLudoteca .texto2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-column: 2/6;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
 }
+
 main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
   height: 200px;
   width: 200px;
@@ -247,8 +354,9 @@ main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
   border-radius: var(--borderWidth);
   margin-left: 5%;
 }
+
 main section.inicioLudoteca .juego1:after, main section.inicioLudoteca .juego2:after {
-  content: "";
+  content: '';
   position: absolute;
   top: calc(-1 * var(--borderWidth));
   left: calc(-1 * var(--borderWidth));
@@ -257,48 +365,75 @@ main section.inicioLudoteca .juego1:after, main section.inicioLudoteca .juego2:a
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   border-radius: calc(2 * var(--borderWidth));
   z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
+  -webkit-animation: animatedgradient 3s ease alternate infinite;
+          animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
 }
+
 main section.inicioLudoteca .juego2 {
   margin-top: 10px;
   margin-left: 10%;
 }
+
 main section.inicioLudoteca u {
   display: block;
   margin-left: 30px;
 }
+
 @media only screen and (max-width: 600px) {
   main section.inicioLudoteca {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr 220px 1fr;
-    grid-template-rows: 40px 220px 220px 220px 220px;
+    -ms-grid-columns: 1fr 220px 1fr;
+        grid-template-columns: 1fr 220px 1fr;
+    -ms-grid-rows: 40px 220px 220px 220px 220px;
+        grid-template-rows: 40px 220px 220px 220px 220px;
     justify-items: center;
   }
   main section.inicioLudoteca .fotoJuego1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2/3;
     margin-left: 0;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .fotoJuego2 {
-    grid-row: 4/5;
-    grid-column: 2/3;
-    justify-self: center;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4 / 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
-    grid-row: 3/4;
-    grid-column: 2/3;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     height: auto;
     width: 100%;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .texto2 {
-    grid-row: 5/6;
-    grid-column: 2/3;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5 / 6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     height: auto;
     width: 100%;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
     margin: 0 auto;
@@ -308,12 +443,23 @@ main section.inicioLudoteca u {
     margin-top: 10px;
   }
 }
+
 main section.inicioGaleria {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
   width: 75%;
   margin: 0 auto;
@@ -323,17 +469,29 @@ main section.inicioGaleria {
   background-size: cover;
   margin-bottom: 50px;
 }
+
 main section.inicioGaleria h2.tituloGaleria {
   margin-bottom: 25px;
   font-size: 35px;
   font-family: fantasy;
 }
+
 main section.inicioGaleria .fotosGaleria {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 main section.inicioGaleria img.fotoGaleria {
   height: auto;
   width: 200px;
@@ -341,42 +499,66 @@ main section.inicioGaleria img.fotoGaleria {
   margin: 10px;
   border: 10px ridge #327c10;
 }
+
 main section.inicioGaleria img.fotoGaleria:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 10px 20px 15px rgb(248, 10, 10);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0px 10px 20px 15px #f80a0a;
+          box-shadow: 0px 10px 20px 15px #f80a0a;
+  -webkit-transition: 1s;
   transition: 1s;
 }
+
 main .inicioLudoteca {
   border: 12px inset #3a373f;
   border-radius: 60px;
 }
+
 main section.inicioNoticias {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 50px 1fr;
-  grid-template-rows: 40px 200px 1fr;
+  -ms-grid-columns: 1fr 50px 1fr;
+      grid-template-columns: 1fr 50px 1fr;
+  -ms-grid-rows: 40px 200px 1fr;
+      grid-template-rows: 40px 200px 1fr;
   justify-items: center;
   margin: 0 auto;
   padding: 0;
   width: 80%;
-  background-image: url(../images/fondo\ noticias.webp);
+  background-image: url(../images/fondoNoticias.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 main h2.tituloNoticias {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-column: 1/4;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 35px;
   font-family: fantasy;
 }
+
 main h2.tituloNoticias a {
   text-decoration: none;
   color: green;
 }
+
 main div.fotoNoticias {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
+
 main .fotoNoticia {
   display: inline-block;
   height: 250px;
@@ -385,33 +567,59 @@ main .fotoNoticia {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
 main .fotoNoticia:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
   transition: 1s;
-  box-shadow: 5px 5px 5px 5px #000000;
+  -webkit-box-shadow: 5px 5px 5px 5px #000000;
+          box-shadow: 5px 5px 5px 5px #000000;
 }
+
 main .noticia1, main body.fondoNoticias section.noticias div.noticia2, body.fondoNoticias section.noticias main div.noticia2 {
-  grid-row: 2/4;
-  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
 }
+
 main .noticia2 {
-  grid-row: 2/4;
-  grid-column: 3/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
 }
+
 @media only screen and (max-width: 640px) {
   main section.inicioNoticias {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr 200px 1fr;
-    grid-template-rows: 40px 200px 220px;
+    -ms-grid-columns: 1fr 200px 1fr;
+        grid-template-columns: 1fr 200px 1fr;
+    -ms-grid-rows: 40px 200px 220px;
+        grid-template-rows: 40px 200px 220px;
   }
   main .noticia1, main body.fondoNoticias section.noticias div.noticia2, body.fondoNoticias section.noticias main div.noticia2 {
-    grid-row: 2/3;
-    grid-column: 2/3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     justify-self: flex-start;
   }
   main .noticia2 {
-    grid-row: 3/4;
-    grid-column: 2/3;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     justify-self: flex-start;
     margin-top: 10px;
   }
@@ -420,10 +628,14 @@ main .noticia2 {
     width: 200px;
   }
 }
+
 main section.inicioLudoteca {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px 1fr 1fr;
-  grid-template-rows: 80px 220px 220px;
+  -ms-grid-columns: 1fr 1fr 250px 1fr 1fr;
+      grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+  -ms-grid-rows: 80px 220px 220px;
+      grid-template-rows: 80px 220px 220px;
   width: 80%;
   margin: 0 auto;
   background-image: url(../images/Ludoteca_fondo.jpg);
@@ -432,25 +644,45 @@ main section.inicioLudoteca {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
 main section.inicioLudoteca h2.tituloLudoteca {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
-  grid-row: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
   text-align: center;
   font-size: 35px;
   font-family: fantasy;
   margin-bottom: 30px;
 }
+
 main section.inicioLudoteca .fotoJuego1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   margin-top: 5px;
 }
+
 main section.inicioLudoteca .fotojuego2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
 }
+
 main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-column: 2/6;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   display: inline-block;
   font-size: 16px;
@@ -466,10 +698,16 @@ main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
   background-color: aliceblue;
   opacity: 0.7;
 }
+
 main section.inicioLudoteca .texto2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-column: 2/6;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
 }
+
 main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
   height: 200px;
   width: 200px;
@@ -479,8 +717,9 @@ main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
   border-radius: var(--borderWidth);
   margin-left: 5%;
 }
+
 main section.inicioLudoteca .juego1:after, main section.inicioLudoteca .juego2:after {
-  content: "";
+  content: '';
   position: absolute;
   top: calc(-1 * var(--borderWidth));
   left: calc(-1 * var(--borderWidth));
@@ -489,48 +728,75 @@ main section.inicioLudoteca .juego1:after, main section.inicioLudoteca .juego2:a
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   border-radius: calc(2 * var(--borderWidth));
   z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
+  -webkit-animation: animatedgradient 3s ease alternate infinite;
+          animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
 }
+
 main section.inicioLudoteca .juego2 {
   margin-top: 10px;
   margin-left: 10%;
 }
+
 main section.inicioLudoteca u {
   display: block;
   margin-left: 30px;
 }
+
 @media only screen and (max-width: 600px) {
   main section.inicioLudoteca {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr 220px 1fr;
-    grid-template-rows: 40px 220px 220px 220px 220px;
+    -ms-grid-columns: 1fr 220px 1fr;
+        grid-template-columns: 1fr 220px 1fr;
+    -ms-grid-rows: 40px 220px 220px 220px 220px;
+        grid-template-rows: 40px 220px 220px 220px 220px;
     justify-items: center;
   }
   main section.inicioLudoteca .fotoJuego1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2/3;
     margin-left: 0;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .fotoJuego2 {
-    grid-row: 4/5;
-    grid-column: 2/3;
-    justify-self: center;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4 / 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
-    grid-row: 3/4;
-    grid-column: 2/3;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     height: auto;
     width: 100%;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .texto2 {
-    grid-row: 5/6;
-    grid-column: 2/3;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5 / 6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     height: auto;
     width: 100%;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
     margin: 0 auto;
@@ -540,12 +806,23 @@ main section.inicioLudoteca u {
     margin-top: 10px;
   }
 }
+
 main section.inicioGaleria {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
   width: 75%;
   margin: 0 auto;
@@ -555,17 +832,29 @@ main section.inicioGaleria {
   background-size: cover;
   margin-bottom: 50px;
 }
+
 main section.inicioGaleria h2.tituloGaleria {
   margin-bottom: 25px;
   font-size: 35px;
   font-family: fantasy;
 }
+
 main section.inicioGaleria .fotosGaleria {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 main section.inicioGaleria img.fotoGaleria {
   height: auto;
   width: 200px;
@@ -573,42 +862,66 @@ main section.inicioGaleria img.fotoGaleria {
   margin: 10px;
   border: 10px ridge #327c10;
 }
+
 main section.inicioGaleria img.fotoGaleria:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 10px 20px 15px rgb(248, 10, 10);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0px 10px 20px 15px #f80a0a;
+          box-shadow: 0px 10px 20px 15px #f80a0a;
+  -webkit-transition: 1s;
   transition: 1s;
 }
+
 main .inicioNoticias {
   border: 12px inset #a52a2a;
   border-radius: 60px;
 }
+
 main section.inicioNoticias {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 50px 1fr;
-  grid-template-rows: 40px 200px 1fr;
+  -ms-grid-columns: 1fr 50px 1fr;
+      grid-template-columns: 1fr 50px 1fr;
+  -ms-grid-rows: 40px 200px 1fr;
+      grid-template-rows: 40px 200px 1fr;
   justify-items: center;
   margin: 0 auto;
   padding: 0;
   width: 80%;
-  background-image: url(../images/fondo\ noticias.webp);
+  background-image: url(../images/fondoNoticias.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 main h2.tituloNoticias {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-column: 1/4;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 35px;
   font-family: fantasy;
 }
+
 main h2.tituloNoticias a {
   text-decoration: none;
   color: green;
 }
+
 main div.fotoNoticias {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
+
 main .fotoNoticia {
   display: inline-block;
   height: 250px;
@@ -617,33 +930,59 @@ main .fotoNoticia {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
 main .fotoNoticia:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
   transition: 1s;
-  box-shadow: 5px 5px 5px 5px #000000;
+  -webkit-box-shadow: 5px 5px 5px 5px #000000;
+          box-shadow: 5px 5px 5px 5px #000000;
 }
+
 main .noticia1, main body.fondoNoticias section.noticias div.noticia2, body.fondoNoticias section.noticias main div.noticia2 {
-  grid-row: 2/4;
-  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
 }
+
 main .noticia2 {
-  grid-row: 2/4;
-  grid-column: 3/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
 }
+
 @media only screen and (max-width: 640px) {
   main section.inicioNoticias {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr 200px 1fr;
-    grid-template-rows: 40px 200px 220px;
+    -ms-grid-columns: 1fr 200px 1fr;
+        grid-template-columns: 1fr 200px 1fr;
+    -ms-grid-rows: 40px 200px 220px;
+        grid-template-rows: 40px 200px 220px;
   }
   main .noticia1, main body.fondoNoticias section.noticias div.noticia2, body.fondoNoticias section.noticias main div.noticia2 {
-    grid-row: 2/3;
-    grid-column: 2/3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     justify-self: flex-start;
   }
   main .noticia2 {
-    grid-row: 3/4;
-    grid-column: 2/3;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     justify-self: flex-start;
     margin-top: 10px;
   }
@@ -652,10 +991,14 @@ main .noticia2 {
     width: 200px;
   }
 }
+
 main section.inicioLudoteca {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px 1fr 1fr;
-  grid-template-rows: 80px 220px 220px;
+  -ms-grid-columns: 1fr 1fr 250px 1fr 1fr;
+      grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+  -ms-grid-rows: 80px 220px 220px;
+      grid-template-rows: 80px 220px 220px;
   width: 80%;
   margin: 0 auto;
   background-image: url(../images/Ludoteca_fondo.jpg);
@@ -664,25 +1007,45 @@ main section.inicioLudoteca {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
 main section.inicioLudoteca h2.tituloLudoteca {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
-  grid-row: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
   text-align: center;
   font-size: 35px;
   font-family: fantasy;
   margin-bottom: 30px;
 }
+
 main section.inicioLudoteca .fotoJuego1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   margin-top: 5px;
 }
+
 main section.inicioLudoteca .fotojuego2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
 }
+
 main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-column: 2/6;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   display: inline-block;
   font-size: 16px;
@@ -698,10 +1061,16 @@ main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
   background-color: aliceblue;
   opacity: 0.7;
 }
+
 main section.inicioLudoteca .texto2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-column: 2/6;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
 }
+
 main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
   height: 200px;
   width: 200px;
@@ -711,8 +1080,9 @@ main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
   border-radius: var(--borderWidth);
   margin-left: 5%;
 }
+
 main section.inicioLudoteca .juego1:after, main section.inicioLudoteca .juego2:after {
-  content: "";
+  content: '';
   position: absolute;
   top: calc(-1 * var(--borderWidth));
   left: calc(-1 * var(--borderWidth));
@@ -721,48 +1091,75 @@ main section.inicioLudoteca .juego1:after, main section.inicioLudoteca .juego2:a
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   border-radius: calc(2 * var(--borderWidth));
   z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
+  -webkit-animation: animatedgradient 3s ease alternate infinite;
+          animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
 }
+
 main section.inicioLudoteca .juego2 {
   margin-top: 10px;
   margin-left: 10%;
 }
+
 main section.inicioLudoteca u {
   display: block;
   margin-left: 30px;
 }
+
 @media only screen and (max-width: 600px) {
   main section.inicioLudoteca {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr 220px 1fr;
-    grid-template-rows: 40px 220px 220px 220px 220px;
+    -ms-grid-columns: 1fr 220px 1fr;
+        grid-template-columns: 1fr 220px 1fr;
+    -ms-grid-rows: 40px 220px 220px 220px 220px;
+        grid-template-rows: 40px 220px 220px 220px 220px;
     justify-items: center;
   }
   main section.inicioLudoteca .fotoJuego1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2/3;
     margin-left: 0;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .fotoJuego2 {
-    grid-row: 4/5;
-    grid-column: 2/3;
-    justify-self: center;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4 / 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .texto1, main section.inicioLudoteca .texto2 {
-    grid-row: 3/4;
-    grid-column: 2/3;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     height: auto;
     width: 100%;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .texto2 {
-    grid-row: 5/6;
-    grid-column: 2/3;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5 / 6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
     height: auto;
     width: 100%;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   main section.inicioLudoteca .juego1, main section.inicioLudoteca .juego2 {
     margin: 0 auto;
@@ -772,12 +1169,23 @@ main section.inicioLudoteca u {
     margin-top: 10px;
   }
 }
+
 main section.inicioGaleria {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: auto;
   width: 75%;
   margin: 0 auto;
@@ -787,17 +1195,29 @@ main section.inicioGaleria {
   background-size: cover;
   margin-bottom: 50px;
 }
+
 main section.inicioGaleria h2.tituloGaleria {
   margin-bottom: 25px;
   font-size: 35px;
   font-family: fantasy;
 }
+
 main section.inicioGaleria .fotosGaleria {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 main section.inicioGaleria img.fotoGaleria {
   height: auto;
   width: 200px;
@@ -805,9 +1225,13 @@ main section.inicioGaleria img.fotoGaleria {
   margin: 10px;
   border: 10px ridge #327c10;
 }
+
 main section.inicioGaleria img.fotoGaleria:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 10px 20px 15px rgb(248, 10, 10);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0px 10px 20px 15px #f80a0a;
+          box-shadow: 0px 10px 20px 15px #f80a0a;
+  -webkit-transition: 1s;
   transition: 1s;
 }
 
@@ -818,33 +1242,51 @@ footer .iconosFooter {
   bottom: 40px;
   left: 15px;
 }
+
 footer i {
   font-size: 50px;
+  margin-left: 10px;
 }
 
 body.fondoNoticias {
   background-image: url(../images/background_noticias.webp);
 }
+
 body.fondoNoticias section.noticias {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 200px 1fr 1fr;
-  grid-template-rows: 10px 250px 1fr;
+  -ms-grid-columns: 200px 1fr 1fr;
+      grid-template-columns: 200px 1fr 1fr;
+  -ms-grid-rows: 10px 250px 1fr;
+      grid-template-rows: 10px 250px 1fr;
   justify-items: center;
   padding: 15px;
   margin-bottom: 40px;
 }
+
 body.fondoNoticias section.noticias div.noticia1, body.fondoNoticias section.noticias div.noticia2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-column: 1/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
+
 body.fondoNoticias section.noticias div.noticia1 .imgNoticia, body.fondoNoticias section.noticias div.noticia2 .imgNoticia {
   height: 200px;
   width: 200px;
   margin-top: 25px;
   border: 11px double blueviolet;
 }
+
 body.fondoNoticias section.noticias div.noticia1 .infoNoticia, body.fondoNoticias section.noticias div.noticia2 .infoNoticia {
   font-size: 19px;
   font-family: fantasy;
@@ -860,46 +1302,84 @@ body.fondoNoticias section.noticias div.noticia1 .infoNoticia, body.fondoNoticia
   border: 5px double black;
   border-radius: 30px;
   background-color: aliceblue;
-  opacity: 0.7;
+  opacity: 0.70;
   text-align: justify;
 }
+
 body.fondoNoticias section.noticias div.noticia2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-column: 1/4;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 20px;
 }
+
 @media only screen and (max-width: 1000px) {
   body.fondoNoticias .infoNoticia {
     font-size: 14px;
   }
 }
+
 @media only screen and (max-width: 500px) {
   body.fondoNoticias section.noticias {
-    grid-template-columns: 1fr 200px 1fr;
-    grid-template-rows: 10px 200px 200px 200px 1fr;
-    justify-content: center;
+    -ms-grid-columns: 1fr 200px 1fr;
+        grid-template-columns: 1fr 200px 1fr;
+    -ms-grid-rows: 10px 200px 200px 200px 1fr;
+        grid-template-rows: 10px 200px 200px 200px 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   body.fondoNoticias section.noticias div.noticia1, body.fondoNoticias section.noticias div.noticia2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
-    flex-direction: column;
-    align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-item-align: center;
+        align-self: center;
     justify-self: center;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2/3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
     grid-row: 2/4;
   }
   body.fondoNoticias section.noticias div.noticia1 .infoNoticia, body.fondoNoticias section.noticias div.noticia2 .infoNoticia {
     font-size: 12px;
   }
   body.fondoNoticias section.noticias div.noticia2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
-    flex-direction: column;
-    align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-item-align: center;
+        align-self: center;
     justify-self: center;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2/3;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
     grid-row: 4/6;
   }
   body.fondoNoticias .imgNoticia {
@@ -919,9 +1399,12 @@ body.fondoLudoteca {
 }
 
 main section.juegoLudoteca div.juegoLudoteca1 {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px 1fr 1fr;
-  grid-template-rows: 80px 220px 20px 280px;
+  -ms-grid-columns: 1fr 1fr 250px 1fr 1fr;
+      grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+  -ms-grid-rows: 80px 220px 20px 280px;
+      grid-template-rows: 80px 220px 20px 280px;
   width: 80%;
   margin: 0 auto;
   background-image: url(../images/Ludoteca_fondo.jpg);
@@ -931,24 +1414,39 @@ main section.juegoLudoteca div.juegoLudoteca1 {
   margin-bottom: 25px;
   border: 10px double black;
 }
+
 main section.juegoLudoteca div.juegoLudoteca1 h2.civilization {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1/2;
   font-size: 26px;
   font-family: fantasy;
   text-align: center;
   color: blue;
 }
+
 main section.juegoLudoteca div.juegoLudoteca1 .tituloLudoteca2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
   text-align: center;
   text-transform: uppercase;
   font-family: fantasy;
   font-size: 16px;
 }
+
 main section.juegoLudoteca div.juegoLudoteca1 p.sinopsisLudoteca {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
   grid-column: 3/6;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   display: inline-block;
   font-size: 16px;
@@ -964,15 +1462,22 @@ main section.juegoLudoteca div.juegoLudoteca1 p.sinopsisLudoteca {
   background-color: aliceblue;
   opacity: 0.7;
 }
+
 main section.juegoLudoteca div.juegoLudoteca1 p.sinopsisLudoteca span.tituloLudoteca {
   display: block;
   text-transform: uppercase;
   margin-left: 12%;
 }
+
 main section.juegoLudoteca div.juegoLudoteca1 img.imgJuego {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   margin-top: 5px;
   height: 200px;
   width: 200px;
@@ -981,20 +1486,31 @@ main section.juegoLudoteca div.juegoLudoteca1 img.imgJuego {
   border-style: double;
   margin-left: 5%;
 }
+
 main section.juegoLudoteca div.juegoLudoteca1 iframe.videoLudoteca {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
   grid-row: 4/5;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   height: 250px;
   width: 445px;
   border-radius: 15px;
   border: 4px double blueviolet;
-  box-shadow: 0px 0px 10px 10px white;
+  -webkit-box-shadow: 0px 0px 10px 10px white;
+          box-shadow: 0px 0px 10px 10px white;
 }
+
 main section.juegoLudoteca div.juegoLudoteca2 {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px 1fr 1fr;
-  grid-template-rows: 80px 220px 20px 280px;
+  -ms-grid-columns: 1fr 1fr 250px 1fr 1fr;
+      grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+  -ms-grid-rows: 80px 220px 20px 280px;
+      grid-template-rows: 80px 220px 20px 280px;
   width: 80%;
   margin: 0 auto;
   background-image: url(../images/Ludoteca_fondo.jpg);
@@ -1004,24 +1520,39 @@ main section.juegoLudoteca div.juegoLudoteca2 {
   margin-bottom: 25px;
   border: 10px double black;
 }
+
 main section.juegoLudoteca div.juegoLudoteca2 h2.wonders {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1/2;
   font-size: 26px;
   font-family: fantasy;
   text-align: center;
   color: blue;
 }
+
 main section.juegoLudoteca div.juegoLudoteca2 .tituloLudoteca2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3/4;
   text-align: center;
   text-transform: uppercase;
   font-family: fantasy;
   font-size: 16px;
 }
+
 main section.juegoLudoteca div.juegoLudoteca2 p.sinopsisLudoteca {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
   grid-column: 3/6;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
   display: inline-block;
   font-size: 16px;
@@ -1037,15 +1568,22 @@ main section.juegoLudoteca div.juegoLudoteca2 p.sinopsisLudoteca {
   background-color: aliceblue;
   opacity: 0.7;
 }
+
 main section.juegoLudoteca div.juegoLudoteca2 p.sinopsisLudoteca span.tituloLudoteca {
   display: block;
   text-transform: uppercase;
   margin-left: 12%;
 }
+
 main section.juegoLudoteca div.juegoLudoteca2 img.imgJuego {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2/3;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   margin-top: 5px;
   height: 200px;
   width: 200px;
@@ -1054,70 +1592,118 @@ main section.juegoLudoteca div.juegoLudoteca2 img.imgJuego {
   border-style: double;
   margin-left: 5%;
 }
+
 main section.juegoLudoteca div.juegoLudoteca2 iframe.videoLudoteca {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-column: 1/6;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
   grid-row: 4/5;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   height: 250px;
   width: 445px;
   border-radius: 15px;
   border: 4px double blueviolet;
-  box-shadow: 0px 0px 10px 10px white;
+  -webkit-box-shadow: 0px 0px 10px 10px white;
+          box-shadow: 0px 0px 10px 10px white;
 }
+
 @media only screen and (max-width: 700px) {
   main section.juegoLudoteca div.juegoLudoteca1 {
-    grid-template-columns: 1fr 300px 1fr;
-    grid-template-rows: 40px 200px 200px 200px 1fr;
-    justify-content: center;
+    -ms-grid-columns: 1fr 300px 1fr;
+        grid-template-columns: 1fr 300px 1fr;
+    -ms-grid-rows: 40px 200px 200px 200px 1fr;
+        grid-template-rows: 40px 200px 200px 200px 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   main section.juegoLudoteca div.juegoLudoteca1 h2.civilization {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1/2;
     margin: auto;
   }
   main section.juegoLudoteca div.juegoLudoteca1 img.imgJuego {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2/3;
     margin: auto;
   }
   main section.juegoLudoteca div.juegoLudoteca1 p.sinopsisLudoteca {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3/4;
     width: 80%;
     height: 80%;
     margin: auto;
   }
   main section.juegoLudoteca div.juegoLudoteca1 iframe.videoLudoteca {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
     grid-row: 4/6;
     width: 80%;
     height: 90%;
     margin-bottom: 15px;
   }
   main section.juegoLudoteca div.juegoLudoteca2 {
-    grid-template-columns: 1fr 300px 1fr;
-    grid-template-rows: 40px 200px 200px 200px 1fr;
-    justify-content: center;
+    -ms-grid-columns: 1fr 300px 1fr;
+        grid-template-columns: 1fr 300px 1fr;
+    -ms-grid-rows: 40px 200px 200px 200px 1fr;
+        grid-template-rows: 40px 200px 200px 200px 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   main section.juegoLudoteca div.juegoLudoteca2 h2.wonders {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1/2;
     margin: auto;
   }
   main section.juegoLudoteca div.juegoLudoteca2 img.imgJuego {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2/3;
     margin: auto;
   }
   main section.juegoLudoteca div.juegoLudoteca2 p.sinopsisLudoteca {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3/4;
     width: 80%;
     height: 80%;
     margin: auto;
   }
   main section.juegoLudoteca div.juegoLudoteca2 iframe.videoLudoteca {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1/4;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
     grid-row: 4/6;
     width: 80%;
     height: 90%;
@@ -1139,6 +1725,7 @@ section.carrusel {
   border: 15px solid blue;
   border-radius: 40px;
 }
+
 section.carrusel .fotoGaleria {
   height: 50%;
   width: 60%;
@@ -1150,13 +1737,16 @@ main.contacto form.formulario {
   width: 90%;
   margin: 0 auto;
   margin-top: 30px;
+  margin-bottom: 50px;
   padding: 25px;
-  border: 15px double rgb(11, 55, 58);
+  border: 15px double #0b373a;
 }
+
 main.contacto form.formulario label {
   font-family: fantasy;
   font-size: 20px;
 }
+
 main.contacto form.formulario option {
   font-weight: bolder;
 }
@@ -1168,12 +1758,25 @@ main.agradecimiento {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 main.agradecimiento div.jumbotron {
   background-color: transparent;
 }
+
 main.agradecimiento div.jumbotron .jugando {
-  animation-name: heartBeat;
-  animation-duration: 2s;
+  -webkit-animation-name: heartBeat;
+          animation-name: heartBeat;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
@@ -1184,7 +1787,8 @@ main.agradecimiento div.jumbotron .jugando {
     opacity: 1;
   }
 }
-@keyframes animatedgradient {
+
+@-webkit-keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
   }
@@ -1196,4 +1800,15 @@ main.agradecimiento div.jumbotron .jugando {
   }
 }
 
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /*# sourceMappingURL=estilo.css.map */
