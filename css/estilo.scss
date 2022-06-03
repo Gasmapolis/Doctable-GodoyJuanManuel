@@ -1,0 +1,858 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+// mapa en scss // 
+$mapa1:(Galeria: #0000ff,
+    Ludoteca: #3a373f,
+    Noticias: #a52a2a,
+);
+
+
+
+
+@mixin tamaño ($altura, $ancho) {
+    height: $altura;
+    width: $ancho;
+}
+
+body {
+    @include tamaño(auto, 100%);
+    background-color: orange;
+}
+
+// inicio del header //
+
+header {
+    box-sizing: border-box;
+    align-items: baseline;
+    background-color: orange;
+    background-image: linear-gradient(#0616f8, #07b2c9, black);
+    border-top: 10px;
+    border-right: 10px;
+    border-left: 10px;
+    border-color: blue;
+    border-bottom: 0.1px hidden orange;
+    border-style: ridge;
+    margin-bottom: 15px;
+    animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-delay: 0s;
+
+    .logo {
+        margin-left: 25%;
+        box-sizing: border-box;
+        @include tamaño(50%, 50%);
+        animation-duration: 3s;
+        animation-name: tada;
+    }
+
+
+    nav ul.navegador {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: baseline;
+        justify-content: flex-end;
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+        font-size: 16px;
+        text-align-last: right;
+        margin-bottom: 0px;
+        margin-right: 15px;
+        margin-left: auto;
+
+
+        .navActivo {
+            font-size: 36px;
+            text-transform: uppercase;
+            background-color: orange;
+            padding: 0 4px 0 4px;
+            border: 5px groove blue;
+            border-bottom: 2px solid orange;
+            border-top-left-radius: 14px;
+            margin-bottom: 0px;
+        }
+
+        .navDerecha {
+            background-color: #ff660057;
+            border-bottom: 6px solid #ff660057;
+            border-left: 0px hidden;
+            border-top-left-radius: 0px;
+            padding: 0 4px 0 4px;
+            margin-bottom: 0px;
+            box-shadow: 0px 0px 5px 5px black;
+        }
+
+        .navIzquierda {
+            background-color: #ff660057;
+            border-bottom: 2px solid #ff660057;
+            border-right: 0px hidden;
+            border-top-right-radius: 0px;
+            padding: 0 4px 0 4px;
+            margin-bottom: 0px;
+            box-shadow: 0px 0px 5px 5px black;
+        }
+
+        li {
+            display: inline-block;
+            border: 5px groove blue;
+            border-bottom-style: solid;
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
+            margin: right 0.001px;
+            margin-bottom: 0px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+
+    @media only screen and (max-width: 455px) {
+        nav ul.navegador {
+            font-size: 10px;
+        }
+
+        ul .navActivo {
+            font-size: 15px !important;
+        }
+
+        section.inicioNoticias {
+            width: 90%;
+        }
+
+        h2.tituloNoticias {
+            margin: 0 auto;
+        }
+
+        img.juego1 {
+            margin: 0 auto;
+        }
+
+        img.juego2 {
+            margin: 0 auto;
+        }
+    }
+}
+
+// fin del Header!!// 
+
+// inicio de Main // 
+
+main {
+    box-sizing: border-box;
+    width: 100%;
+
+    @each $seccion,
+    $colors in $mapa1 {
+        // seccion Inicio noticias inicio// 
+
+        .inicio#{$seccion} {
+            border: 12px inset $colors;
+            border-radius: 60px;
+        }
+
+        section.inicioNoticias {
+            display: grid;
+            grid-template-columns: 1fr 50px 1fr;
+            grid-template-rows: 40px 200px 1fr;
+            justify-items: center;
+            margin: 0 auto;
+            padding: 0;
+            width: 80%;
+            background-image: url(../images/fondo\ noticias.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        h2.tituloNoticias {
+            grid-row: 1/2;
+            grid-column: 1/4;
+            justify-content: center;
+            font-size: 35px;
+            font-family: fantasy;
+        }
+
+        h2.tituloNoticias a {
+            text-decoration: none;
+            color: green;
+        }
+
+        div.fotoNoticias {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .fotoNoticia {
+            display: inline-block;
+            @include tamaño(250px, 250px);
+            border: 5px ridge orange;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .fotoNoticia:hover {
+            transform: scale(1.1);
+            transition: 1s;
+            box-shadow: 5px 5px 5px 5px #000000;
+        }
+
+        .noticia1 {
+            grid-row: 2 / 4;
+            grid-column: 1 / 2;
+        }
+
+        .noticia2 {
+            grid-row: 2 / 4;
+            grid-column: 3 / 4;
+        }
+
+        @media only screen and (max-width:640px) {
+            section.inicioNoticias {
+                display: grid;
+                grid-template-columns: 1fr 200px 1fr;
+                grid-template-rows: 40px 200px 220px;
+            }
+
+            .noticia1 {
+                grid-row: 2 / 3;
+                grid-column: 2 / 3;
+                justify-self: flex-start;
+
+            }
+
+            .noticia2 {
+                grid-row: 3 / 4;
+                grid-column: 2 / 3;
+                justify-self: flex-start;
+                margin-top: 10px;
+            }
+
+            .fotoNoticia {
+                @include tamaño(200px, 200px);
+            }
+        }
+
+        // ---- fin seccion noticias inicio--------//
+
+        // ---- Inicio seccion Ludoteca inicio  //
+
+        section.inicioLudoteca {
+            display: grid;
+            grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+            grid-template-rows: 80px 220px 220px;
+            width: 80%;
+            margin: 0 auto;
+            background-image: url(../images/Ludoteca_fondo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 25px;
+            margin-bottom: 25px;
+
+            h2.tituloLudoteca {
+                grid-column: 1/6;
+                grid-row: 1 / 2;
+                text-align: center;
+                font-size: 35px;
+                font-family: fantasy;
+                margin-bottom: 30px;
+            }
+
+            .fotoJuego1 {
+                grid-column: 1/3;
+                grid-row: 2/3;
+                margin-top: 5px;
+            }
+
+            .fotojuego2 {
+                grid-column: 1/3;
+                grid-row: 3/4;
+            }
+
+            .texto1 {
+                grid-column: 2/6;
+                grid-row: 2/3;
+                display: inline-block;
+                font-size: 16px;
+                font-family: fantasy;
+                overflow-x: auto;
+                color: blue;
+                margin-top: 5px;
+                margin-left: 5%;
+                margin-right: 5%;
+                padding: 10px;
+                border: 10px solid black;
+                border-radius: 30px;
+                background-color: aliceblue;
+                opacity: 0.7;
+            }
+
+            .texto2 {
+                @extend .texto1;
+                grid-column: 2/6;
+                grid-row: 3/4;
+            }
+
+            .juego1 {
+                @include tamaño(200px, 200px);
+                --borderWidth: 3px;
+                background: #1D1F20;
+                position: relative;
+                border-radius: var(--borderWidth);
+                margin-left: 5%;
+            }
+
+            .juego1:after {
+                content: '';
+                position: absolute;
+                top: calc(-1 * var(--borderWidth));
+                left: calc(-1 * var(--borderWidth));
+                height: calc(100% + var(--borderWidth) * 2);
+                width: calc(100% + var(--borderWidth) * 2);
+                background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+                border-radius: calc(2 * var(--borderWidth));
+                z-index: -1;
+                animation: animatedgradient 3s ease alternate infinite;
+                background-size: 300% 300%;
+              }
+
+            .juego2 {
+                @extend .juego1;
+                margin-top: 10px;
+                margin-left: 10%;
+            }
+
+            u {
+                display: block;
+                margin-left: 30px;
+            }
+
+
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            section.inicioLudoteca {
+                display: grid;
+                grid-template-columns: 1fr 220px 1fr;
+                grid-template-rows: 40px 220px 220px 220px 220px;
+                justify-items: center;
+
+                .fotoJuego1 {
+                    grid-row: 2/3;
+                    grid-column: 2/3;
+                    margin-left: 0;
+                    justify-self: center;
+                }
+
+                .fotoJuego2 {
+                    grid-row: 4 / 5;
+                    grid-column: 2 / 3;
+                    justify-self: center;
+                }
+
+                .texto1 {
+                    grid-row: 3 / 4;
+                    grid-column: 2 / 3;
+                    @include tamaño(auto, 100%);
+                    justify-self: center;
+                }
+
+                .texto2 {
+                    grid-row: 5 / 6;
+                    grid-column: 2 / 3;
+                    @include tamaño(auto, 100%);
+                    justify-self: center;
+                }
+
+                .juego1 {
+                    margin: 0 auto;
+                }
+
+                .juego2 {
+                    margin: 0 auto;
+                    margin-top: 10px;
+                }
+            }
+
+        }
+
+        // seccion inicio ludoteca fin // 
+
+        // seccion inicio galeria inicio //
+
+        section.inicioGaleria {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            @include tamaño(auto, 75%);
+            margin: 0 auto;
+            padding: 5%;
+            background-image: url(../images/marco_galeria.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 50px;
+
+            h2.tituloGaleria {
+                margin-bottom: 25px;
+                font-size: 35px;
+                font-family: fantasy;
+            }
+
+            .fotosGaleria {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: center;
+            }
+
+            img.fotoGaleria {
+                @include tamaño(auto, 200px);
+                border-radius: 25px;
+                margin: 10px;
+                border: 10px ridge #327c10;
+            }
+
+            img.fotoGaleria:hover {
+                transform: scale(1.1);
+                box-shadow: 0px 10px 20px 15px rgb(248, 10, 10);
+                transition: 1s;
+            }
+        }
+
+        // seccion inicio Galeria fin // 
+    }
+}
+
+// fin de Main // 
+
+
+// inicio del footer // 
+footer {
+    .iconosFooter {
+        height: 20px;
+        position: fixed;
+        padding: 10px;
+        bottom: 40px;
+        left: 15px;
+    }
+
+    i {
+        font-size: 50px;
+    }
+}
+
+//  Fin del Footer  //
+
+
+// seccion Noticias inicio //
+
+body.fondoNoticias {
+    background-image: url(../images/background_noticias.webp);
+
+    section.noticias {
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr;
+        grid-template-rows: 10px 250px 1fr;
+        justify-items: center;
+        padding: 15px;
+        margin-bottom: 40px;
+
+        div.noticia1 {
+            grid-column: 1/4;
+            grid-row: 2/3;
+            display: flex;
+            flex-direction: row;
+
+            .imgNoticia {
+                @include tamaño(200px, 200px);
+                margin-top: 25px;
+                border: 11px double blueviolet;
+            }
+
+            .infoNoticia {
+                font-size: 19px;
+                font-family: fantasy;
+                color: blue;
+                overflow-y: auto;
+                height: 200px;
+                max-width: 90%;
+                min-width: 300px;
+                margin-top: 25px;
+                margin-right: 15px;
+                margin-left: 10px;
+                padding: 10px;
+                border: 5px double black;
+                border-radius: 30px;
+                background-color: aliceblue;
+                opacity: 0.70;
+                text-align: justify;
+            }
+        }
+
+        div.noticia2 {
+            @extend .noticia1;
+            grid-column: 1/4;
+            grid-row: 3/4;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .infoNoticia {
+            font-size: 14px;
+        }
+    }
+
+    @media only screen and (max-width:500px) {
+        section.noticias {
+            grid-template-columns: 1fr 200px 1fr;
+            grid-template-rows: 10px 200px 200px 200px 1fr;
+            justify-content: center;
+
+            div.noticia1 {
+                display: flex;
+                flex-flow: column nowrap;
+                flex-direction: column;
+                align-self: center;
+                justify-self: center;
+                grid-column: 2/3;
+                grid-row: 2/4;
+                .infoNoticia{
+                    font-size: 12px;
+                }
+            }
+
+            div.noticia2 {
+                display: flex;
+                flex-flow: column nowrap;
+                flex-direction: column;
+                align-self: center;
+                justify-self: center;
+                grid-column: 2/3;
+                grid-row: 4/6;
+            }
+        }
+        .imgNoticia {
+            @include tamaño(250px, 250px);
+            margin: 0 auto;
+        }
+
+        .infoNoticia {
+            margin: 0 auto;
+            margin-top: 15px;
+        }
+
+
+    }
+}
+// Seccion Noticias fin //
+
+// Seccion Ludoteca Inicio //
+
+body.fondoLudoteca{
+    background-image: url(../images/fondo_ludoteca.jpg);
+    background-attachment: fixed;
+}
+main{
+    section.juegoLudoteca{
+        div.juegoLudoteca1{
+            display: grid;
+            grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+            grid-template-rows: 80px 220px 20px 280px;
+            width: 80%;
+            margin: 0 auto;
+            background-image: url(../images/Ludoteca_fondo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border: 10px double black;
+            h2.civilization{
+                grid-column: 1/6;
+                grid-row: 1/2;
+                font-size: 26px;
+                font-family: fantasy;
+                text-align: center;
+                color: blue;
+            }
+            .tituloLudoteca2{
+                grid-column: 1/6;
+                grid-row: 3/4;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: fantasy;
+                font-size: 16px;
+            }
+            p.sinopsisLudoteca{
+                grid-column: 3/6;
+                grid-row: 2/3;
+                display: inline-block;
+                font-size: 16px;
+                font-family: fantasy;
+                overflow-x: auto;
+                color: blue;
+                margin-top: 5px;
+                margin-left: 5%;
+                margin-right: 5%;
+                padding: 10px;
+                border: 10px solid black;
+                border-radius: 30px;
+                background-color: aliceblue;
+                opacity: 0.7;
+                span.tituloLudoteca{
+                    display: block;
+                    text-transform: uppercase;
+                    margin-left: 12%;
+                }
+            }
+            img.imgJuego{
+                grid-column: 1/3;
+                grid-row: 2/3;
+                justify-self: center;
+                margin-top: 5px;
+                @include tamaño(200px, 200px);
+                border-radius: 50px;
+                border: 5px;
+                border-style: double;
+                margin-left: 5%;
+            }
+            iframe.videoLudoteca{
+                grid-column: 1/6;
+                grid-row: 4/5;
+                justify-self: center;
+                @include tamaño(250px, 445px);
+                border-radius: 15px;
+                border: 4px double blueviolet;
+                box-shadow: 0px 0px 10px 10px white;
+            }
+        }
+        
+        div.juegoLudoteca2{
+            display: grid;
+            grid-template-columns: 1fr 1fr 250px 1fr 1fr;
+            grid-template-rows: 80px 220px 20px 280px;
+            width: 80%;
+            margin: 0 auto;
+            background-image: url(../images/Ludoteca_fondo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border: 10px double black;
+            h2.wonders{
+                grid-column: 1/6;
+                grid-row: 1/2;
+                font-size: 26px;
+                font-family: fantasy;
+                text-align: center;
+                color: blue;
+            }
+            .tituloLudoteca2{
+                grid-column: 1/6;
+                grid-row: 3/4;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: fantasy;
+                font-size: 16px;
+            }
+            p.sinopsisLudoteca{
+                grid-column: 3/6;
+                grid-row: 2/3;
+                display: inline-block;
+                font-size: 16px;
+                font-family: fantasy;
+                overflow-x: auto;
+                color: blue;
+                margin-top: 5px;
+                margin-left: 5%;
+                margin-right: 5%;
+                padding: 10px;
+                border: 10px solid black;
+                border-radius: 30px;
+                background-color: aliceblue;
+                opacity: 0.7;
+                span.tituloLudoteca{
+                    display: block;
+                    text-transform: uppercase;
+                    margin-left: 12%;
+                }
+            }
+            img.imgJuego{
+                grid-column: 1/3;
+                grid-row: 2/3;
+                justify-self: center;
+                margin-top: 5px;
+                @include tamaño(200px, 200px);
+                border-radius: 50px;
+                border: 5px;
+                border-style: double;
+                margin-left: 5%;
+            }
+            iframe.videoLudoteca{
+                grid-column: 1/6;
+                grid-row: 4/5;
+                justify-self: center;
+                @include tamaño(250px, 445px);
+                border-radius: 15px;
+                border: 4px double blueviolet;
+                box-shadow: 0px 0px 10px 10px white;
+            }
+        }
+    }
+    @media only screen and (max-width: 700px){
+        section.juegoLudoteca{
+            div.juegoLudoteca1{
+                grid-template-columns: 1fr 300px 1fr;
+                grid-template-rows: 40px 200px 200px 200px 1fr;
+                justify-content: center;
+                h2.civilization{
+                    grid-column: 1/4;
+                    grid-row: 1/2;
+                    margin: auto;
+                }
+                img.imgJuego{
+                    grid-column: 1/4;
+                    grid-row: 2/3;
+                    margin: auto;
+                }
+                p.sinopsisLudoteca{
+                    grid-column: 1/4;
+                    grid-row: 3/4;
+                    width: 80%;
+                    height: 80%;
+                    margin: auto;
+                }
+                iframe.videoLudoteca{
+                    grid-column: 1/4;
+                    grid-row: 4/6;
+                    width: 80%;
+                    height: 90%;
+                    margin-bottom: 15px;
+                }
+            }
+            div.juegoLudoteca2{
+                grid-template-columns: 1fr 300px 1fr;
+                grid-template-rows: 40px 200px 200px 200px 1fr;
+                justify-content: center;
+                h2.wonders{
+                    grid-column: 1/4;
+                    grid-row: 1/2;
+                    margin: auto;
+                }
+                img.imgJuego{
+                    grid-column: 1/4;
+                    grid-row: 2/3;
+                    margin: auto;
+                }
+                p.sinopsisLudoteca{
+                    grid-column: 1/4;
+                    grid-row: 3/4;
+                    width: 80%;
+                    height: 80%;
+                    margin: auto;
+                }
+                iframe.videoLudoteca{
+                    grid-column: 1/4;
+                    grid-row: 4/6;
+                    width: 80%;
+                    height: 90%;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    
+}
+// seccion Ludoteca finalizado // 
+
+// seccion Galeria inicio //
+.fondoGaleria{
+    background-image: url(../images/marco_galeria.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.carrusel{
+    margin-top: 15%;
+    margin-bottom: 50px;
+    width: 80%;
+    margin-left: 10%;
+    border: 15px solid blue;
+    border-radius: 40px;
+    .fotoGaleria{
+        @include tamaño(50% , 60%)
+    }
+}
+// seccion Galeria Finalizado // 
+
+// seccion Contacto inicio // 
+
+main.contacto{
+    form.formulario{
+        background-image: url(../images/fondoFormulario.png);
+        background-size: cover;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 25px;
+        border: 15px double rgb(11, 55, 58);
+        label{
+            font-family: fantasy;
+            font-size: 20px;
+        }
+        option{
+            font-weight: bolder;
+        }
+    }
+}
+// seccion Contacto Fin //
+
+// seccion Formulario Inicio // 
+main.agradecimiento{
+    border: 10px solid blueviolet;
+    background-color: #eea928;
+    background-image: url(https://acegif.com/wp-content/gif/confetti-44.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    div.jumbotron{
+        background-color: transparent;
+        .jugando{
+            animation-name: heartBeat;
+            animation-duration: 2s;    
+        }
+    }
+
+}
+// seccion Formulario fin // 
+
+// animaciones // 
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
